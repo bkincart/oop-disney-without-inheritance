@@ -11,11 +11,11 @@ describe Animated_Film do
 
   let(:aladdin_soundtrack) { Soundtrack.new('Aladdin', [a_whole_new_world, friend_like_me])}
 
-  let(:aladdin_movie) { Movie.new('Aladdin', 1992, [aladdin, jasmine, jafar], aladdin_soundtrack) }
+  let(:aladdin_movie) { Animated_Film.new('Aladdin', 1992, [aladdin, jasmine, jafar], aladdin_soundtrack) }
 
   describe ".new" do
     it "takes a name, year, character array, and soundtrack as arguments" do
-      expect(aladdin_movie).to be_a(Movie)
+      expect(aladdin_movie).to be_an(Animated_Film)
     end
 
     it "initializes with a watch_count of 0" do
@@ -44,7 +44,7 @@ describe Animated_Film do
 
   describe "#characters" do
     it "has a reader for 'characters'" do
-      expect(aladdin_movie.characters).to eq([aladdin, jafar, jasmine])
+      expect(aladdin_movie.characters).to eq([aladdin, jasmine, jafar])
     end
   end
 
@@ -52,26 +52,26 @@ describe Animated_Film do
     it "adds a character to the 'characters' array" do
       aladdin_movie.add_character(genie)
 
-      expect(aladdin_soundtrack.characters.count).to eq(4)
-      expect(aladdin_soundtrack.characters).to include(genie)
+      expect(aladdin_movie.characters.count).to eq(4)
+      expect(aladdin_movie.characters).to include(genie)
     end
   end
 
   describe "#heroes" do
     it "prints out a list of the heroes" do
-      expect(aladdin_movie.heroes).to eq("Aladdin\nJasmine")
+      expect(aladdin_movie.heroes).to eq("Aladdin\nJasmine\n")
     end
   end
 
   describe "#villains" do
     it "prints out a list of the villains" do
-      expect(aladdin_movie.villains).to eq("Jafar")
+      expect(aladdin_movie.villains).to eq("Jafar\n")
     end
   end
 
   describe '#cast' do
     it "prints out the cast" do
-      expect(aladdin_movie.cast).to eq("Aladdin\nJasmine\nJafar")
+      expect(aladdin_movie.cast).to eq("Aladdin\nJasmine\nJafar\n")
     end
   end
 end

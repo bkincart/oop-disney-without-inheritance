@@ -17,6 +17,12 @@ describe Character do
     end
   end
 
+  describe "#name" do
+    it "has a reader for name" do
+      expect(genie.name).to eq("Genie")
+    end
+  end
+
   describe "#actor" do
     it "has a reader for actor" do
       expect(genie.actor).to eq("Robin Williams")

@@ -13,7 +13,7 @@ describe Soundtrack do
 
   describe ".new" do
     it "takes a name and a song array as arguments" do
-      expect(friend_like_me).to be_a(Soundtrack)
+      expect(aladdin_soundtrack).to be_a(Soundtrack)
     end
   end
 
@@ -34,7 +34,7 @@ describe Soundtrack do
 
   describe 'print_soundtrack' do
     it "prints out the soundtrack song listing" do
-      expect(aladdin_soundtrack.print_soundtrack).to eq("A Whole New World\nFriend Like Me")
+      expect(aladdin_soundtrack.print_soundtrack).to eq("A Whole New World\nFriend Like Me\n")
     end
   end
 end

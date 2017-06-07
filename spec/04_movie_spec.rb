@@ -44,7 +44,7 @@ describe Movie do
 
   describe "#characters" do
     it "has a reader for 'characters'" do
-      expect(aladdin_movie.characters).to eq([aladdin, jafar, jasmine])
+      expect(aladdin_movie.characters).to eq([aladdin, jasmine, jafar])
     end
   end
 
@@ -52,26 +52,26 @@ describe Movie do
     it "adds a character to the 'characters' array" do
       aladdin_movie.add_character(genie)
 
-      expect(aladdin_soundtrack.characters.count).to eq(4)
-      expect(aladdin_soundtrack.characters).to include(genie)
+      expect(aladdin_movie.characters.count).to eq(4)
+      expect(aladdin_movie.characters).to include(genie)
     end
   end
 
   describe "#heroes" do
     it "prints out a list of the heroes" do
-      expect(aladdin_movie.heroes).to eq("Aladdin\nJasmine")
+      expect(aladdin_movie.heroes).to eq("Aladdin\nJasmine\n")
     end
   end
 
   describe "#villains" do
     it "prints out a list of the villains" do
-      expect(aladdin_movie.villains).to eq("Jafar")
+      expect(aladdin_movie.villains).to eq("Jafar\n")
     end
   end
 
   describe '#cast' do
     it "prints out the cast" do
-      expect(aladdin_movie.cast).to eq("Scott Weinger\nLinda Larkin\nJonathan Freeman")
+      expect(aladdin_movie.cast).to eq("Scott Weinger\nLinda Larkin\nJonathan Freeman\n")
     end
   end
 end

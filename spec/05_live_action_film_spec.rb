@@ -8,11 +8,11 @@ describe Live_Action_Film do
 
   let(:pirates_soundtrack) { Soundtrack.new('Pirates of the Caribbean', [])}
 
-  let(:pirates) { Movie.new('Pirates of the Caribbean', 2003, [will, elizabeth, barbossa]) }
+  let(:pirates) { Live_Action_Film.new('Pirates of the Caribbean', 2003, [will, elizabeth, barbossa]) }
 
   describe ".new" do
     it "takes a name, year, and character array as arguments" do
-      expect(pirates).to be_a(Movie)
+      expect(pirates).to be_a(Live_Action_Film)
     end
 
     it "initializes with a watch_count of 0" do
@@ -49,26 +49,26 @@ describe Live_Action_Film do
     it "adds a character to the 'characters' array" do
       pirates.add_character(jack)
 
-      expect(aladdin_soundtrack.characters.count).to eq(4)
-      expect(aladdin_soundtrack.characters).to include(jack)
+      expect(pirates.characters.count).to eq(4)
+      expect(pirates.characters).to include(jack)
     end
   end
 
   describe "#heroes" do
     it "prints out a list of the heroes" do
-      expect(pirates.heroes).to eq("Will Turner\nElizabeth Swann")
+      expect(pirates.heroes).to eq("Will Turner\nElizabeth Swann\n")
     end
   end
 
   describe "#villains" do
     it "prints out a list of the villains" do
-      expect(pirates.villains).to eq("Capt Barbossa")
+      expect(pirates.villains).to eq("Capt Barbossa\n")
     end
   end
 
   describe '#cast' do
     it "prints out the cast" do
-      expect(pirates.cast).to eq("Orlando Bloom\nKeira Knightley\nGeoffrey Rush")
+      expect(pirates.cast).to eq("Orlando Bloom\nKeira Knightley\nGeoffrey Rush\n")
     end
   end
 end
