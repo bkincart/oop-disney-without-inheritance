@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Animated_Film do
+describe AnimatedFilm do
   let(:aladdin) { Character.new('Aladdin', 'human', 'Scott Weinger', 'hero') }
   let(:genie) { Character.new('Genie', 'genie', 'Robin Williams', 'hero') }
   let(:jafar) { Character.new('Jafar', 'human', 'Jonathan Freeman', 'villain') }
@@ -11,11 +11,11 @@ describe Animated_Film do
 
   let(:aladdin_soundtrack) { Soundtrack.new('Aladdin', [a_whole_new_world, friend_like_me])}
 
-  let(:aladdin_movie) { Animated_Film.new('Aladdin', 1992, [aladdin, jasmine, jafar], aladdin_soundtrack) }
+  let(:aladdin_movie) { AnimatedFilm.new('Aladdin', 1992, [aladdin, jasmine, jafar], aladdin_soundtrack) }
 
   describe ".new" do
     it "takes a name, year, character array, and soundtrack as arguments" do
-      expect(aladdin_movie).to be_an(Animated_Film)
+      expect(aladdin_movie).to be_an(AnimatedFilm)
     end
 
     it "initializes with a watch_count of 0" do

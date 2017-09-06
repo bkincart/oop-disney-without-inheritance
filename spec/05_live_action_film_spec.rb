@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Live_Action_Film do
+describe LiveActionFilm do
   let(:will) { Character.new('Will Turner', 'human', 'Orlando Bloom', 'hero') }
   let(:elizabeth) { Character.new('Elizabeth Swann', 'human', 'Keira Knightley', 'hero') }
   let(:jack) { Character.new('Jack Sparrow', 'human', 'Johnny Depp', 'hero') }
@@ -8,11 +8,11 @@ describe Live_Action_Film do
 
   let(:pirates_soundtrack) { Soundtrack.new('Pirates of the Caribbean', [])}
 
-  let(:pirates) { Live_Action_Film.new('Pirates of the Caribbean', 2003, [will, elizabeth, barbossa]) }
+  let(:pirates) { LiveActionFilm.new('Pirates of the Caribbean', 2003, [will, elizabeth, barbossa]) }
 
   describe ".new" do
     it "takes a name, year, and character array as arguments" do
-      expect(pirates).to be_a(Live_Action_Film)
+      expect(pirates).to be_a(LiveActionFilm)
     end
 
     it "initializes with a watch_count of 0" do
