@@ -33,13 +33,13 @@ describe Character do
     end
   end
 
-  describe "#hero_or_villain" do
-    it "returns 'hero' for a hero" do
-      expect(aladdin.hero_or_villain).to eq("hero")
+  describe "#hero?" do
+    it "returns 'true' for a hero" do
+      expect(aladdin.hero?).to eq(true)
     end
 
-    it "returns 'villain' for a villain" do
-      expect(jafar.hero_or_villain).to eq("villain")
+    it "returns 'false' for a villain" do
+      expect(jafar.hero?).to eq(false)
     end
   end
 end
